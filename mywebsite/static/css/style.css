@@ -10,3 +10,20 @@
     padding: 10px;
     text-align: center;
 }
+
+.navbar-utama{
+    background-color: #ff2eb2;
+    color: white;
+}
+
+.navbar-utama a{
+    color: #666363;
+}
+
+.navbar-utama a:hover{
+    color: #000000;
+}
+
+.card img:hover{
+    transform: scale(1.2);
+}
