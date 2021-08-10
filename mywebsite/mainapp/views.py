@@ -18,6 +18,12 @@ def tabel_page(request):
 def example(request):
     return render(request, 'example.html')
 
+def newpage(request):
+    return HttpResponse("new")
+
+def a(request):
+    return HttpResponse()
+
 def shop(request) :
     return render(request, 'shop.html')
 
@@ -26,4 +32,18 @@ def firstpage(request) :
 
 def secondpage(request) :
     return render(request, 'secondpage.html')
+
+def shop_laptop(request):
+    return render(request, 'shop_laptop.html')
+
+
+def shop_console(request):
+    return render(request, 'shop_console.html')
+
+
+def shop_smartphone(request):
+    return render(request, 'shop_smartphone.html')
+
+def shop_adidascopa(request) :
+    return render(request, 'shop_adidascopa.html')
 
