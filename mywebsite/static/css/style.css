@@ -1,0 +1,12 @@
+.outer-box{
+    background-color: red;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+#inner-box{
+    background-color: aqua;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+}
