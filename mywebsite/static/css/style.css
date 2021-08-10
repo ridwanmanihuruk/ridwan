@@ -12,8 +12,8 @@
 }
 
 .navbar-utama{
-    background-color: #ff2eb2;
-    color: white;
+    background-color: #fc58bb;
+    color: white ;
 }
 
 .navbar-utama a{
@@ -24,6 +24,47 @@
     color: #000000;
 }
 
+
 .card img:hover{
-    transform: scale(1.2);
+    transform: scale(1.3);
+}
+
+.card button{
+    background-color: lightcoral;
+}
+
+.card button:hover{
+    background-color: crimson;
+}
+
+.card h1:hover{
+    color: #fc58bb !important;
+}
+
+.profile-text h1{
+    color: hotpink;
+}
+
+.profile-text button{
+    background-color:  rgb(224, 164, 211);
+}
+
+.profile-text button:hover{
+    background-color: hotpink;
+}
+
+/* .header-content{
+    background-image: url(https://tomolondon.com/wp-content/uploads/2020/07/Screenshot-2020-07-18-at-13.49.50.png)
+} */
+
+.image-copa img:hover{
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQn3nP7oWQnnA0FpOo1kukiD-Aovcuhv9EKqg&usqp=CAU);
+}
+
+.image-x img:hover{
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCHIhrL51qPGVDhoabPmzg4TVbT-69mt7g5Q&usqp=CAU);
+}
+
+.image-predator img:hover{
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsg0TriIbKyecbt67Qz7POEmMZCg8syJhF4g&usqp=CAU);
 }
