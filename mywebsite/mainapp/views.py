@@ -52,3 +52,12 @@ def shop_adidasx(request):
 
 def shop_adidaspredator(request):
     return render(request, 'shop_adidaspredator.html')
+
+def shop_popular(request):
+    return render(request, 'shop_popular.html')
+
+def shop_signin(request):
+    return render(request, 'shop_signin.html')
+
+def shop_signup(request):
+    return render(request, 'shop_signup.html')

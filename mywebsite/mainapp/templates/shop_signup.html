@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div style="margin-top: 100px; margin-left: 100px; margin-right: 100px; padding: 25px;" class="card">
+
+    <form class="row g-3">
+        <div class="col-md-6">
+        <label for="inputName" class="form-label">Fullname</label>
+        <input type="text" class="form-control" id="inputName">
+        </div>
+        <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Password</label>
+        <input type="password" class="form-control" id="inputPassword4">
+        </div>
+        <div class="col-12">
+        <label for="inputNation" class="form-label">Nationality</label>
+        <input type="text" class="form-control" id="inputNation" placeholder="Indonesia">
+        </div>
+        <div class="col-12">
+        <label for="inputEmail4" class="form-label">Email</label>
+        <input type="email" class="form-control" id="inputEmail" placeholder="example@example.com">
+        </div>
+        <div class="col-md-6">
+        <label for="inputUsername" class="form-label">Username</label>
+        <input type="text" class="form-control" id="inputUsername">
+        </div>
+        <div class="col-md-4">
+        <label for="inputGender" class="form-label">Gender</label>
+        <select id="inputGender" class="form-select">
+            <option selected>Choose...</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Rahter not say</option>
+        </select>
+        </div>
+        <div class="col-md-2">
+        <label for="inputBd" class="form-label">Borndate</label>
+        <input type="date" class="form-control" id="inputBd">
+        </div>
+        <div class="col-12">
+        <button type="submit" class="btn btn-primary">Sign in</button>
+        </div>
+    </form>
+
+</div>
+
+{% endblock content %}

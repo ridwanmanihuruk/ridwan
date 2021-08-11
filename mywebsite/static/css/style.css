@@ -91,6 +91,12 @@
     background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsg0TriIbKyecbt67Qz7POEmMZCg8syJhF4g&usqp=CAU);
 }
 
-.navbar-adidas a{
-    color: tomato;
+.d-flex button{
+    color: deeppink;
+    background-color: blanchedalmond;
+}
+
+.d-flex button:active{
+    color: blanchedalmond;
+    background-color: #fc58bb ;
 }
