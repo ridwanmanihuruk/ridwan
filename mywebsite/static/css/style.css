@@ -100,3 +100,9 @@
     color: blanchedalmond;
     background-color: #fc58bb ;
 }
+
+.header-content{
+    background-size: 100% ;
+    background-attachment: fixed;
+    background-position-y: 70px;
+}
