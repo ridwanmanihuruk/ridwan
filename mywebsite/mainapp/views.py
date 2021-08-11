@@ -47,3 +47,8 @@ def shop_smartphone(request):
 def shop_adidascopa(request) :
     return render(request, 'shop_adidascopa.html')
 
+def shop_adidasx(request):
+    return render(request, 'shop_adidasx.html')
+
+def shop_adidaspredator(request):
+    return render(request, 'shop_adidaspredator.html')

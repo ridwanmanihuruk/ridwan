@@ -25,9 +25,31 @@
 }
 
 
-.card img:hover{
+.col-md-3 img:hover{
     transform: scale(1.3);
 }
+
+.card header img:hover{
+    transform: scale(0.8);
+}
+
+.profile-text h2{
+    color: blanchedalmond;
+    font-size: 25px;
+}
+
+.container-lg h10{
+    color: palevioletred;
+    font-style:italic;
+}
+
+.profile-text p{
+    color: rgb(118, 140, 160);
+}
+
+/* .wallpaper-series img:hover{
+    transform: scale(1.2);
+} */
 
 .card button{
     background-color: lightcoral;
@@ -53,8 +75,8 @@
     background-color: hotpink;
 }
 
-/* .header-content{
-    background-image: url(https://tomolondon.com/wp-content/uploads/2020/07/Screenshot-2020-07-18-at-13.49.50.png)
+/* .headercontent{
+    background-image: url(hthttps://pbs.twimg.com/media/Eet6fq1VoAIQetk.jpg:largetps://tomolondon.com/wp-content/uploads/2020/07/Screenshot-2020-07-18-at-13.49.50.png);
 } */
 
 .image-copa img:hover{
@@ -67,4 +89,8 @@
 
 .image-predator img:hover{
     background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsg0TriIbKyecbt67Qz7POEmMZCg8syJhF4g&usqp=CAU);
+}
+
+.navbar-adidas a{
+    color: tomato;
 }
