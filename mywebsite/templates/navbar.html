@@ -26,15 +26,29 @@
         <div class="collapse log-collapse" id="navbarLog">
             
         </div>
-
+        {% if logged %}
+        <div class="d-flex flex-row-reverse bd-highlight">
+            <a class="p-2 bd-highlight" href="/shop/"><button class="btn fw-bold" >Sign Out</button></a>
+            <div class="p-2 bd-highlight">
+                <select class="form-select form-select-sm bd-highlight" aria-label=".form-select-sm example">
+                    <option selected>Logged</option>
+                    <option value="1">Account</option>
+                    <option value="2">My Favorite</option>
+                    <option value="3">Cart</option>
+                    <option value="3">History</option>
+                  </select>
+            </div>
+            
+        </div>   
+        {% else %}
         <div class="d-flex flex-row-reverse bd-highlight">
             <a class="p-2 bd-highlight" href="/shop/signup"><button class="btn fw-bold" >Sign Up</button></a>
             <a class="p-2 bd-highlight" href="/shop/signin"><button class="btn fw-bold" >Sign In</button></a>
         </div>
-
-        <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn fw-bold" type="submit">Search</button>
+        {% endif %}
+        <form class="d-flex" action="/shop/search/" method="GET">
+            <input type="text" name="product_name" placeholder="What are u looking for" class="form-control me-2">
+            <button class="btn fw-bold" value="search" type="submit">Search</button>
         </form>
     </div>
 </nav>

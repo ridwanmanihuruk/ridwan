@@ -38,6 +38,21 @@
     font-size: 25px;
 }
 
+.profile-text h3{
+    color: blueviolet;
+    font-size: 25px;
+}
+
+.profile-text h4{
+    color: brown;
+    font-size: 25px;
+}
+
+.profile-text h5{
+    color: floralwhite;
+    font-size: 25px;
+}
+
 .container-lg h10{
     color: palevioletred;
     font-style:italic;
@@ -105,4 +120,26 @@
     background-size: 100% ;
     background-attachment: fixed;
     background-position-y: 70px;
+}
+
+.buttonn-search button{
+    color: deeppink;
+    background-color: blanchedalmond;
+}
+
+.buttonn-search button:hover{
+    color: blanchedalmond;
+    background-color: #fc58bb ;
+}
+
+.form-select{
+    background-color: blanchedalmond;
+    height: 38px;
+    color: deeppink;
+    font-style: oblique ;
+}
+
+.form-select:hover{
+    background-color: blanchedalmond;
+    height: 38px;;
 }

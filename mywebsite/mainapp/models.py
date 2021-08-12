@@ -14,11 +14,11 @@ class Category(models.Model):
 
 class Product(models.Model):
     name = models.CharField(max_length=200)
-    # picture = models.ImageField()
+    picture = models.ImageField()
     description = models.TextField()
     price = models.IntegerField()
     category = models.ForeignKey(Category, on_delete=CASCADE)
-    # color = models.TextField()
+    color = models.TextField()
     def __str__ (self):
         return(self.name)
 

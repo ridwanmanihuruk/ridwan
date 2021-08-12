@@ -29,6 +29,9 @@ def a(request):
 def shop(request) :
     return render(request, 'shop.html')
 
+def shop_logged(request) :
+    return render(request, 'shop.html', {'logged':True})
+
 def firstpage(request) :
     return render(request, 'firstpage.html')
 
@@ -64,26 +67,15 @@ def shop_signin(request):
 def shop_signup(request):
     return render(request, 'shop_signup.html')
 
-def shop_adidascopa_list(request) :
-    try:
-        print(request.GET)
-        category_copa = Category.objects.get(pk=1)
+def shop_search(request) :
+    print(request.GET)
+        # category_copa = Category.objects.get(pk=1)
         #pk == primary_key
-        product_adidascopa = Product.objects.filter(category=category_copa).filter(
-            name__contains=request.GET['product_name'])
+    product_stock = Product.objects.filter(name__contains=request.GET['product_name'])
         # WHERE name like 'chrome'
-        if(product_adidascopa.count() != 0):
-            return render(request, 'shop_adidascopa_list.html', {'product_list': product_adidascopa, 'available': True})
-        else:
-            return render(request, 'shop_adidascopa_list.html', {'available': False})
-    except:
-        return HttpResponse("Terjadi Error")
-
-    try:
-        print(request.GET)
-        category_copa = Category.objects.get(pk=1)
-        product_adidascopa = Product.objects.filter(category=category_copa)
-        return render(request, 'shop_adidascopa_list.html' , {'product_list': product_adidascopa})
-    except :
-        return HttpResponse('Terjadi Error')
-
+    if(product_stock.count() != 0):
+        return render(request, 'shop_search.html', {'product_list': product_stock, 'available': True})
+    else:
+        return render(request, 'shop_search.html', {'available': False})
+    # except:
+    #     return HttpResponse("Terjadi Error")
