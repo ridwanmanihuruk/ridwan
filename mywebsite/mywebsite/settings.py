@@ -87,6 +87,21 @@ DATABASES = {
     }
 }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'e_commerce_db',
+#         'USER': 'root',
+#         'PASSWORD': 'Manihuruk10',
+#         'HOST': '127.0.0.1',
+#         'PORT': '3306',
+#         'OPTIONS': {
+#             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
+#         }
+#     }
+# }
+
+
 if PRODUCTION:
     DATABASES['default'] = dj_database_url.config()
 
