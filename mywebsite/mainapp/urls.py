@@ -10,6 +10,7 @@ urlpatterns = [
     path('shop/laptop/', views.shop_laptop),
     path('shop/smartphone/', views.shop_smartphone),
     path('shop/adidascopa/', views.shop_adidascopa),
+    path('shop/adidascopa/list/', views.shop_adidascopa_list),
     path('shop/adidaspredator/', views.shop_adidaspredator),
     path('shop/popular/', views.shop_popular),
     path('shop/signin/', views.shop_signin),

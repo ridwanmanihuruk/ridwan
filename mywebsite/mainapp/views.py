@@ -1,6 +1,8 @@
+from django import http
 from django.shortcuts import render
 from django.http import HttpResponse
 import matplotlib as plt
+from .models import *
 
 # Create your views here.
 def landig_page(request):
@@ -61,3 +63,11 @@ def shop_signin(request):
 
 def shop_signup(request):
     return render(request, 'shop_signup.html')
+
+def shop_adidascopa_list(request) :
+    try:
+        category_copa = Category.objects.get(pk=1)
+        product_adidascopa = Product.objects.filter(category=category_copa)
+        return render(request, 'shop_adidascopa_list.html' , {'product_list': product_adidascopa})
+    except :
+        return HttpResponse('Terjadi Error')
