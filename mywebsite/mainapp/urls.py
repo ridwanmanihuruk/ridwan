@@ -13,7 +13,6 @@ urlpatterns = [
     path('shop/adidascopa/', views.shop_adidascopa),
     path('shop/search/', views.shop_search),
     path('shop/adidaspredator/', views.shop_adidaspredator),
-    path('shop/popular/', views.shop_popular),
     path('shop/signin/', views.shop_signin),
     path('shop/signup/', views.shop_signup),
     path('shop/adidasx/', views.shop_adidasx),
