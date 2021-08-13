@@ -2,24 +2,117 @@
 {% load static %}
 
 {% block content %}
-<div style="margin-top: 100px;">
-    <div class=" header-content container-lg">
-        <div class="row justify-content-start align-items-center mb-4">
-            <div class="col-md-6">
-                <img src="https://jejakpiknik.com/wp-content/uploads/2021/05/toko-laptop-di-margonda-depok.jpg">
-            </div>
-            <div class="col-md-6">
-                <div class="profile-text">
-                    <p>Welcome, customer !</p>
-                    <h1 class="fw-bold fs-1 text-danger text-uppercase">Smartphone</h1>
-                    <p>Find your best and top quality electronic goods here. lorem ipsum dolor sit amet.</p>
-                    <button class="btn btn-danger">See Review</button>
+<div class="header bg-light">
+    <div class="header-content container-fluid img-fluid" style="margin-top: 65px; height: 575px ;background-image: url(https://thumblr.uniid.it/blog_component/91273/38c27bdfa81d.jpg);">
+        <div class="row justify-content-start">
+            <div class="col-md-" style="margin-top: 65px;">
+                <div class="row min-vh-10 align-items-middle">
+                    <div class="col-md-5" style=" margin-top: 50px; margin-left: 20px;">
+                        <div class="profile-text">
+                            <p>#ImpossibleIsNothing</p>
+                            <h1 class="fw-bold fs-1 text-uppercase">Adidas Football</h1>
+                            <h2>STORIES, STYLE, AND SPORTING GOODS AT ADIDAS, SINCE 1949</h2>
+                            <p>Through sport, we have the power to change lives.</p>
+                            <a href="/shop/popular"><button class="btn">Popular Right Now</button></a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<div class="bg-light">
+<div class="container-lg py-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="section-title text-center">
+                <h2 class="fw-bold mb-5">Your Bucketlist</h2>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <!-- {% if available %}
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in product_list %}
+                <tr>
+                    <td scope="col">{{forloop.counter}}</td>
+                    <td scope="col">{{item.name}}</td>
+                    <td scope="col">{{item.description}}</td>
+                    <td scope="col">{{item.price}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <div class="col text-center">
+            <span>No Avaiable Product</span>
+        </div>
+        {% endif %} -->
+        {% if available %}
+        {% for item in product_list %}
+        <div style="margin-top: 25px;" class="card mx-5">
+            <div class=" header-content container-lg mt-4 ">
+                <div class="row justify-content-start align-items-center mb-4">
+                    <div class="col-md-3">
+                        <img src="{{ item.picture.url }}" width="200px">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="profile-text">
+                            <p>{{item.category}}</p>
+                            <h1 class="fw-bold fs-2 text-danger text-uppercase">{{item.name}}</h1>
+                            <p>{{item.description}}</p>
+                        </div>
+                    </div> 
+                    <div class="col text-center">
+                        <h1 class="fw-bold fs-3 text-warning text-uppercase">Shop Now !!</h1>
+                        <h2 class="fw-bold fst-italic fs-5">{{item.price}}</h2>
+                        <button class="btn">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% else %}
+        <div class="col text-center">
+                <span>No Avaiable Product</span>
+        </div>
+        {% endif %}
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <form action="/shop/allproducts/filter" method="GET">
+                <div class="row">
+                    <div class="col-6">
+                        <label for="price_min">Minimum Price</label>
+                        <input type="number" name="price_min" placeholder="0" class="form-control form-control-lg fs-6">
+                    </div>
+                    <div class="col-6">
+                        <label for="price_max">Maximum Price</label>
+                        <input type="number" name="price_max" placeholder="1000"
+                            class="form-control form-control-lg fs-6">
+                    </div>
+                </div>
+                <input class="btn btn-success mt-4" type="submit" value="filter">
+            </form>
+        </div>
+    </div>
+</div>>
+
+
+
+
+
+
+
+<!-- <div class="bg-light">
     <div class="container-lg py-4">
         <div class="row justify-content-center">
             <div class="col-lg-8">
@@ -81,9 +174,9 @@
 
         </div>
     </div>
-</div>
+</div> -->
 
-<div class="">
+<!-- <div class="">
     <div class="container-lg py-4">
         <div class="row justify-content-center ">
             <div class="col-lg-8">
@@ -120,5 +213,9 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 {% endblock content %}
+
+{% block script %}
+<script src="{% static 'js/script.js' %}"></script>
+{% endblock script %}

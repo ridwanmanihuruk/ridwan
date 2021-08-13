@@ -1,8 +1,11 @@
 from django import http
+from django.db.models.aggregates import Max
+from django.db.models.expressions import Exists
 from django.shortcuts import render
 from django.http import HttpResponse
 import matplotlib as plt
 from .models import *
+from .forms import *
 
 # Create your views here.
 def landig_page(request):
@@ -67,15 +70,66 @@ def shop_signin(request):
 def shop_signup(request):
     return render(request, 'shop_signup.html')
 
+def shop_products(request):
+    # print(request.GET)
+    # n = 1
+    # mainproduct = Product.objects.filter(id=n)    
+    return render(request, 'shop_products.html')
+
 def shop_search(request) :
-    print(request.GET)
-        # category_copa = Category.objects.get(pk=1)
-        #pk == primary_key
-    product_stock = Product.objects.filter(name__contains=request.GET['product_name'])
-        # WHERE name like 'chrome'
+    try:
+        print(request.GET)
+            # category_copa = Category.objects.get(pk=1)
+            #pk == primary_key
+        if(request.GET == {}):
+            product_stock = Product.objects.all
+        else:    
+            product_stock = Product.objects.filter(name__contains=request.GET['product_name'])
+            # WHERE name like 'chrome'
+
+        #
+        if(product_stock.count() != 0):
+            return render(request, 'shop_search.html', {'product_list': product_stock, 'available': True})
+        else:
+            return render(request, 'shop_search.html', {'available': False})
+    except:
+        return HttpResponse("Terjadi Error")
+
+def shop_allproducts(request):
+    # try:
+    #     print(request.GET)
+    product_stock = Product.objects.all()
+        # form = SearchForm(request.GET)
+        # print(form.is_valid())
+        # if(form.is_valid()):
+        #     product_laptop = Product.objects.filter(
+        #     name__contains=request.GET['product_name'])
+        # else:
+        #     return render(request, 'shop_allproducts.html', {'available': False})
+
     if(product_stock.count() != 0):
-        return render(request, 'shop_search.html', {'product_list': product_stock, 'available': True})
+        return render(request, 'shop_allproducts.html', {'product_list': product_stock, 'available': True})
     else:
-        return render(request, 'shop_search.html', {'available': False})
+        return render(request, 'shop_allproducts.html', {'available': False})
+    # except:
+    #     return HttpResponse("Terjadi Error")
+
+def shop_allproducts_filter(request):
+    # try:
+    print(request.GET)
+    # product_stock = Product.objects.all()
+    form = SearchForm(request.GET)
+    print(form.is_valid())
+    min = request.GET['price_min']
+    max = request.GET['price_max']
+    if(form.is_valid()):
+        product_stock = Product.objects.filter()
+        if(product_stock.count() != 0):
+            return render(request, 'shop_allproducts.html', {'product_list': product_stock, 'available': True})
+        else:
+            return render(request, 'shop_allproducts.html', {'available': False})
+    else:        
+        return render(request, 'shop_allproducts.html', {'available': False})
+    
     # except:
     #     return HttpResponse("Terjadi Error")

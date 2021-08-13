@@ -67,7 +67,7 @@
                     <div class="col-md-6">
                         <div class="profile-text">
                             <p>{{item.category}}</p>
-                            <h1 class="fw-bold fs-2 text-danger text-uppercase">{{item.name}}</h1>
+                            <a href="/shop/products/"><h1 class="fw-bold fs-2 text-danger text-uppercase">{{item.name}}</h1></a>
                             <p>{{item.description}}</p>
                         </div>
                     </div> 
@@ -84,9 +84,27 @@
         <div class="col text-center">
                 <span>No Avaiable Product</span>
         </div>
-        {% endif %} -->
+        {% endif %}
     </div>
-</div>
+    <div class="row">
+        <div class="col-6">
+            <!-- <form action="/shop/search/" method="GET">
+                <div class="row">
+                    <div class="col-6">
+                        <label for="price_min">Minimum Price</label>
+                        <input type="number" name="price_min" placeholder="0" class="form-control form-control-lg fs-6">
+                    </div>
+                    <div class="col-6">
+                        <label for="price_max">Maximum Price</label>
+                        <input type="number" name="price_max" placeholder="100"
+                            class="form-control form-control-lg fs-6">
+                    </div>
+                </div>
+                <input class="btn btn-success mt-4" type="submit" value="search">
+            </form> -->
+        </div>
+    </div>
+</div>>
 
 
 
@@ -197,3 +215,7 @@
     </div>
 </div>
 {% endblock content %}
+
+{% block script %}
+<script src="{% static 'js/script.js' %}"></script>
+{% endblock script %}
