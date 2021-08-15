@@ -71,10 +71,11 @@ def shop_signup(request):
     return render(request, 'shop_signup.html')
 
 def shop_products(request):
-    # print(request.GET)
-    # n = 1
-    # mainproduct = Product.objects.filter(id=n)    
-    return render(request, 'shop_products.html')
+    print(request.GET)
+    print(request.GET['mainproduct_name'])
+    mainproduct = Product.objects.filter(name__=request.GET['mainproduct_name'])  
+    print(mainproduct)
+    return render(request, 'shop_products.html', {'mainproduct': mainproduct})
 
 def shop_search(request) :
     try:

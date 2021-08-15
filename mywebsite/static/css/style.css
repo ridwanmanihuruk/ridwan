@@ -143,3 +143,13 @@
     background-color: blanchedalmond;
     height: 38px;;
 }
+
+#main-img:hover{
+    transform: scale(1) !important;
+}
+
+#size-option{
+    color: palevioletred !important;
+    background-color: papayawhip !important;
+}
+
