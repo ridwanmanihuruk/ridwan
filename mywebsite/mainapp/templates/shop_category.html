@@ -9,10 +9,10 @@
                 <div class="row min-vh-10 align-items-middle">
                     <div class="col-md-5" style=" margin-top: 125px; margin-left: 20px;">
                         <div class="profile-text">
-                            <p>CRAFTED FOR ULTIMATE TOUCH!</p>
-                            <h1 class="fw-bold fs-1 text-uppercase">ADIDAS COPA</h1>
+                            <p>{{category.champaign}}</p>
+                            <h1 class="fw-bold fs-1 text-uppercase">{{category.name}}</h1>
                             <h3>FREEDOM TO FEEL EVERY TOUCH</h3>
-                            <p>Football depends on a strong sense of touch.</p>
+                            <p>{{category.description}}</p>
                             <a href="/shop/popular"><button class="btn">Popular in Adidas</button></a>
                         </div>
                     </div>
@@ -21,7 +21,36 @@
         </div>
     </div>
 </div>
-<div style="margin-top: 50px;" class="card mx-5">
+{% if available %}
+{% for item in product_list %}
+<div style="margin-top: 25px;" class="card mx-5">
+    <div class=" header-content container-lg mt-4 ">
+        <div class="row justify-content-start align-items-center mb-4">
+            <div class="col-md-3">
+                <img src="{{ item.picture.url }}" width="200px">
+            </div>
+            <div class="col-md-6">
+                <div class="profile-text">
+                    <p>{{item.category}}</p>
+                    <a href="/shop/products/{{item.id}}" ><h1 name='mainproduct_name' class="fw-bold fs-2 text-danger text-uppercase">{{item.name}}</h1></a>
+                    <p>{{item.description}}</p>
+                </div>
+            </div> 
+            <div class="col text-center">
+                <h1 class="fw-bold fs-3 text-warning text-uppercase">SHOP NOW!!</h1>
+                <h2 class="fw-bold fst-italic fs-5">{{item.price}}</h2>
+                <button class="btn">Buy Now</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% else %}
+<div class="col text-center">
+        <span>No Avaiable Product</span>
+</div>
+{% endif %}
+<!-- <div style="margin-top: 50px;" class="card mx-5">
     <div class=" header-content container-lg mt-4 ">
         <div class="row justify-content-start align-items-center mb-4">
             <div class="col-md-3">
@@ -41,9 +70,9 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
-<div style="margin-top: 25px;" class="card mx-5">
+<!-- <div style="margin-top: 25px;" class="card mx-5">
     <div class=" header-content container-lg mt-4 ">
         <div class="row justify-content-start align-items-center mb-4">
             <div class="col-md-3">
@@ -86,7 +115,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 
 {% endblock content %}

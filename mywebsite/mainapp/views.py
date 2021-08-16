@@ -1,11 +1,11 @@
 from django import http
-from django.db.models.aggregates import Max
-from django.db.models.expressions import Exists
 from django.shortcuts import render
 from django.http import HttpResponse
-import matplotlib as plt
 from .models import *
 from .forms import *
+from django.shortcuts import render, redirect
+from django.contrib.auth import authenticate, login, logout
+from django.templatetags.static import static
 
 # Create your views here.
 def landig_page(request):
@@ -53,27 +53,77 @@ def shop_smartphone(request):
     return render(request, 'shop_smartphone.html')
 
 def shop_adidascopa(request) :
-    return render(request, 'shop_adidascopa.html')
+    # try:
+    category_copa = Category.objects.get(pk=1)    
+    product_stock = Product.objects.filter(category=category_copa) 
+    if(product_stock.count() != 0):
+        return render(request, 'shop_category.html', {'product_list': product_stock, 'category':category_copa,'available': True})
+    else:
+        return render(request, 'shop_category.html', {'available': False})
+    # eXcept:
+    #     return HttpResponse("Terjadi Error")
 
 def shop_adidasx(request):
-    return render(request, 'shop_adidasx.html')
+    try:
+        category_x = Category.objects.get(pk=2)    
+        product_stock = Product.objects.filter(category=category_x)
+              
+        if(product_stock.count() != 0):
+            return render(request, 'shop_category.html', {'product_list': product_stock,'category':category_x,'available': True})
+        else:
+            return render(request, 'shop_category.html', {'available': False})
+    except:
+        return HttpResponse("Terjadi Error")
 
 def shop_adidaspredator(request):
-    return render(request, 'shop_adidaspredator.html')
+    try:
+        category_predator = Category.objects.get(pk=3)    
+        product_stock = Product.objects.filter(category=category_predator)
+              
+        if(product_stock.count() != 0):
+            return render(request, 'shop_category.html', {'product_list': product_stock, 'category':category_predator, 'available': True})
+        else:
+            return render(request, 'shop_category.html', {'available': False})
+    except:
+        return HttpResponse("Terjadi Error")
 
 def shop_popular(request):
     return render(request, 'shop_popular.html')
 
+# def shop_signin(request):
+#     return render(request, 'shop_signin.html')
+
+
 def shop_signin(request):
+    if(request.POST == {}):
+        print("GET")
+        return render(request, 'shop_signin.html')
+    else:
+        print(request.POST)
+        account = authenticate(
+            request, username=request.POST['username'], password=request.POST['password'])
+        print(account)
+        if account is not None:
+            login(request, account)
+            # if(user.user_level == 0):
+            return redirect('/shop/')
+            # return redirect('/')
+        else:
+            return render(request, 'shop_signin.html', {'message': 'wrong username or password'})
     return render(request, 'shop_signin.html')
+
+def shop_signout(request):
+    logout(request)
+    return redirect('/shop/')
 
 def shop_signup(request):
     return render(request, 'shop_signup.html')
 
-def shop_products(request):
-    print(request.GET)
-    print(request.GET['mainproduct_name'])
-    mainproduct = Product.objects.filter(name__=request.GET['mainproduct_name'])  
+def shop_products(request, id_products):
+    # print(request.GET)
+    # print(request.GET['mainproduct_name'])
+    # mainproduct = Product.objects.filter(name__=request.GET['mainproduct_name'])  
+    mainproduct = Product.objects.get(pk=id_products)
     print(mainproduct)
     return render(request, 'shop_products.html', {'mainproduct': mainproduct})
 

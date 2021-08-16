@@ -26,9 +26,9 @@
         <div class="collapse log-collapse" id="navbarLog">
             
         </div>
-        {% if logged %}
+        {% if user.is_authenticated %}
         <div class="d-flex flex-row-reverse bd-highlight">
-            <a class="p-2 bd-highlight" href="/shop/"><button class="btn fw-bold" >Sign Out</button></a>
+            <a class="p-2 bd-highlight" href="/shop/signout/"><button class="btn fw-bold" >Sign Out</button></a>
             <div class="p-2 bd-highlight">
                 <select class="form-select form-select-sm bd-highlight" aria-label=".form-select-sm example">
                     <option selected>Logged</option>

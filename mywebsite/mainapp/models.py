@@ -12,6 +12,7 @@ class Category(models.Model):
     name = models.CharField(max_length=100)
     champaign = models.TextField(default='Input Champaign')
     description = models.TextField()
+    # motto = models.TextField(default='Input Motto')
     def __str__ (self):
         return(self.name)
 
