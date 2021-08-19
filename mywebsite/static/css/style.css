@@ -153,3 +153,6 @@
     background-color: papayawhip !important;
 }
 
+.product-img img:hover{
+    transform: scale(2) !important;
+}

@@ -6,16 +6,16 @@
     <div class="row mb-4 ms-5">
         <div style="margin-top: 100px; width: 25em" class="col-md-3 card card-center mx-4">
             <div class="row">
-                <div class="col">
-                    </a ><img src="https://prosoccerstore.co/wp-content/uploads/2021/01/Adidas-Copa-20-FG-AG-Encryption-Silver-Metallic-Solar-Yellow-4.jpg" width="75px"></a>
+                <div class="col product-img">
+                    <img src="https://prosoccerstore.co/wp-content/uploads/2021/01/Adidas-Copa-20-FG-AG-Encryption-Silver-Metallic-Solar-Yellow-4.jpg" width="75px">
                 </div>
-                <div class="col">
+                <div class="col product-img">
                     <img src="https://prosoccerstore.co/wp-content/uploads/2021/01/Adidas-Copa-20-FG-AG-Encryption-Silver-Metallic-Solar-Yellow-2.jpg" width="75px">
                 </div>
-                <div class="col">
+                <div class="col product-img">
                     <img src="https://prosoccerstore.co/wp-content/uploads/2021/01/Adidas-Copa-20-FG-AG-Encryption-Silver-Metallic-Solar-Yellow-3.jpg" width="75px">
                 </div>
-                <div class="col">
+                <div class="col product-img">
                     <img src="https://thumblr.uniid.it/product/187431/472647b498b4.jpg" width="75px">
                 </div>
             </div>
@@ -30,7 +30,7 @@
                 <h3>{{mainproduct.category.champaign}}</h3>
                 <p>{{mainproduct.description}}</p>
                 <div>
-                    
+                    <p>Color : {{mainproduct.color}}</p>
                 </div>
                 <div class="row ms-1 my-3 bd-highlightc">
                     <select class="form-select form-select-sm bd-highlight" style="width: 80px;" aria-label=".form-select-sm example" id="size-option">
@@ -41,15 +41,6 @@
                         <option value="4">42</option>
                         <option value="5">43</option>
                         <option value="6">44</option>
-                      </select>
-                      <select class="ms-2 form-select form-select-sm bd-highlight" style="width: 80px;" aria-label=".form-select-sm example" id="size-option">
-                        <option selected>color</option>
-                        <option value="1">color 1</option>
-                        <option value="2">color 2</option>
-                        <option value="3">color 3</option>
-                        <option value="4">color 4</option>
-                        <option value="5">color 5</option>
-                        <option value="6">color 6</option>
                       </select>
                 </div>
                 <h1 class="fw-bold fst-italic fs-5">$ {{mainproduct.price}}</main></h1>
